@@ -1,8 +1,8 @@
-streamlit
-openai
-SpeechRecognition
-gTTS
-pygame
-matplotlib
-colorama
-python-dotenv
+     streamlit==1.10.0
+     openai==0.27.0
+     SpeechRecognition==3.8.1
+     gTTS==2.2.3
+     pygame==2.0.1
+     matplotlib==3.5.1
+     colorama==0.4.4
+     python-dotenv==0.19.1
