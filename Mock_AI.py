@@ -14,6 +14,9 @@ from dotenv import load_dotenv
 
 # Initialize colorama and pygame
 init(autoreset=True)
+import os
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 pygame.mixer.init()
 
 # Load environment variables
