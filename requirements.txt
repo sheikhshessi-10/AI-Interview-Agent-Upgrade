@@ -4,6 +4,6 @@ openai==1.60.0
 SpeechRecognition==3.14.0
 gTTS==2.5.4
 python-dotenv
-install pygame
+install pygame==2.6.1
 matplotlib
 colorama
