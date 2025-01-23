@@ -3,7 +3,7 @@ streamlit==1.41.1
 openai==1.60.0
 SpeechRecognition==3.14.0
 gTTS==2.5.4
-pygame==2.6.1
 python-dotenv
+pip install pygame
 matplotlib
 colorama
