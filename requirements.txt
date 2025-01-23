@@ -1,3 +1,4 @@
+
 streamlit==1.41.1
 openai==1.60.0
 SpeechRecognition==3.14.0
