@@ -1,9 +1,8 @@
-openai
+streamlit
+openai==1.60.1
 SpeechRecognition
 gTTS
 pygame
 matplotlib
 colorama
 python-dotenv
-wheel
-pyaudio
