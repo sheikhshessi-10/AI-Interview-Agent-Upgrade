@@ -11,7 +11,6 @@ from colorama import init
 import time
 from threading import Thread
 from dotenv import load_dotenv
-from streamlit_audio_recorder import st_audio_recorder
 
 # Initialize colorama and pygame
 init(autoreset=True)
@@ -124,15 +123,12 @@ def speak_with_gif(text, gif_placeholder, animated_gif_path, static_gif_path):
 
 # Speech Input Function
 def get_speech_input():
-    st.write("Click the microphone button and speak")
-    audio_data = st.audio_recorder("Record your response", key=f"speech_input_{time.time()}")
+    user_response = st.text_input("Enter your response or transcribe your spoken answer", key=f"text_input_{time.time()}")
     
-    if audio_data is not None:
-        # You can add optional processing here
+    if user_response:
         st.success("Response recorded!")
-        return "Recorded audio response"  # Placeholder text
+        return user_response
     return ""
-
 # GPT Chat Function
 def chat_with_gpt(prompt):
     try:
