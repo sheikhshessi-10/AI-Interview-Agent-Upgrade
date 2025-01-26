@@ -20,9 +20,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 pygame.mixer.init()
 
 # Load environment variables
-load_dotenv()
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # Streamlit page configuration
 st.set_page_config(layout="wide")
 
