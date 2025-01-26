@@ -6,3 +6,4 @@ pygame
 matplotlib
 colorama
 python-dotenv
+streamlit-audio-recorder
