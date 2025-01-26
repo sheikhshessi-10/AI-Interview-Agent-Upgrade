@@ -11,6 +11,7 @@ from colorama import init
 import time
 from threading import Thread
 from dotenv import load_dotenv
+from streamlit_audio_recorder import st_audio_recorder
 
 # Initialize colorama and pygame
 init(autoreset=True)
@@ -123,20 +124,13 @@ def speak_with_gif(text, gif_placeholder, animated_gif_path, static_gif_path):
 
 # Speech Input Function
 def get_speech_input():
-    with sr.Microphone() as source:
-        st.info("🎙 Listening... Please speak your answer.")
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        try:
-            audio = recognizer.listen(source, timeout=5, phrase_time_limit=15)
-            text = recognizer.recognize_google(audio)
-            st.success(f"✅ You : {text}")
-            return text
-        except sr.UnknownValueError:
-            st.warning("🤔 Could not understand the audio. Please try speaking clearly.")
-        except sr.RequestError:
-            st.error("❌ Speech recognition service is unavailable.")
-        except sr.WaitTimeoutError:
-            st.warning("⏰ No speech detected. Please try again.")
+    st.write("Click the microphone button and speak")
+    audio_data = st.audio_recorder("Record your response", key=f"speech_input_{time.time()}")
+    
+    if audio_data is not None:
+        # You can add optional processing here
+        st.success("Response recorded!")
+        return "Recorded audio response"  # Placeholder text
     return ""
 
 # GPT Chat Function
